@@ -1,0 +1,198 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root {
+    --cor1:#c5ebd6;
+    --cor2:#83E1AD;
+    --cor3:#3ddc84;
+    --cor4:#2FA866;
+    --cor5:#1A5C37;
+    --cor6:#063d1e;
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque:'Bebas Neue', cursive;
+    --fonte-android:'Android', cursive;
+}
+
+* {
+    margin:0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #c5ebd6;
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after {
+                   content: '\00a0\1F517';
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor4), var(--cor6));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    color:white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+    font-weight: normal;
+}
+
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2 em;
+    max-width: 500px;
+    margin: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+}
+
+nav {
+    background-color: var(--cor6);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 192);
+}
+
+nav > a {
+    color: var(--cor2);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition-duration: 0.5s; /* efeito legal na hora de mudar de um link pro outro do menu */
+}
+
+nav > a:hover {
+    background-color: var(--cor4);
+    color: var(--cor6);
+}
+
+main { background-color: white;
+       min-width: 300px;
+       max-width: 1000px; /* Quando tiver 1000px pára de crescer, quando tiver menos adapta o conteúdo */ margin: auto; /* Quando estiver vendo em tela cheia, não crescer */
+       margin-bottom: 30px;
+       padding: 20px;
+       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.404);
+       border-bottom-left-radius: 10px;
+       border-bottom-right-radius: 10px;
+}
+
+main h1 {
+    color:var(--cor6);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    color: var(--cor5);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor2), transparent);
+    text-indent: 8px;
+}
+
+main p /* Não coloco assim : "main > p" porque dentro de "main" ainda tem um "article", e às vezes tem um "main", um "article" e uma "div", significa que um "p" pode estar dentro de um "main" em qualquer nivel, dentro de outras tags também */ {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em; /* Significa altura entre linhas. Facilita a leitura o espaçamento, não se perder na leitura.*/ font-size: 1em;
+}
+
+main strong {
+    color: var(--cor5);
+    font-weight: bold;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor6);
+    background-color: var(--cor2);
+    padding: 2px 6px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor5);
+}
+
+main img {
+    width: 100% /* Vai fazer com que, independente do conteúdo, minhas imagens tenham 100% de largura, elas se espremem e se adaptam desta forma. */
+}
+
+main img.peq {
+    max-width: 350px;
+    display: block;
+    margin: auto; /* Uma imagem por padrão não é um bloco, então pra ela centralizar na tela utilizamos junto ao "margin: auto" o "display: block". */
+}
+
+div.video {
+    background-color: var(--cor4);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59% /* Configura a barra preta lateral do video */;
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute /* "top" e "left" dizem respeito a "position", top: a distancia da "mãozinha" até a "setinha" */;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    background-color: var(--cor2);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.281);
+}
+
+aside > h3 {
+    background-color: var(--cor5);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px /* Quero que ele cresça 10 pixels pra fora */;
+    border-radius: 10px 10px 0px 0px /* Em cima, na esquerda; em cima, na direita; embaixo, na direita; embaixo, na esquerda: relembrando a ordem do arredondamento das bordas. */;  
+}
+
+aside > ul {
+    list-style-type: '\2714\00a0\00a0'/* Emojipedia, Codepoints: Sem "U+". "00a0" é o "&nbsp" do CSS. Não é compatível com todos os navegadores este tipo de inserção.*/ ;
+    list-style-position: inside /* O normal é "outside", as "bolinhas" ficam do lado de fora da caixa */;
+    columns: 2;
+}
+
+footer {
+    background-color: var(--cor6);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px
+}
+
+footer a /* Todo link em footer. "footer > a" : Guanabara não fez esta aplicação porque não é imediatamente dentro, tem um parágrafo antes, assim: "footer > p > a" estaria correto. */ {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor2);
+}
+

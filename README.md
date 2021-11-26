@@ -1,0 +1,1 @@
+Modelo de página responsiva usando apenas HTML e CSS, desenvolvida nas aulas do módulo 2 do CursoemVideo de HTML e CSS. Seguindo firme com o curso no módulo 3 agora, que já abordou sobre Git e Github (Github pages em ação: https://karencamp.github.io/Desafio10_CursoemVideo-HTML-e-CSS_Pagina-responsiva) e está partindo agora para muito mais aprendizados sobre as linguagens.
